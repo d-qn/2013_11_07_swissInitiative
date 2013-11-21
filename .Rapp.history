@@ -1,0 +1,447 @@
+install.packages(ggplot2)
+install.packages("ggplot2")
+?install.packages
+install.packages(c("devtools", "xts", "wordcloud", "XML", "streamR", "slidify", "scrapeR" , "ROAuth",  "roxygen2" , "extrafont", "extrafontdb" , "maps" , "maptools" ,"markdown", "plyr" ,"RColorBrewer","RCurl","rgdal","RgoogleMaps"                  "rjson", "RJSONIO"))
+install.packages(c("devtools", "xts", "wordcloud", "XML"))
+install.packages(c("streamR", "slidify", "scrapeR" , "ROAuth",  "roxygen2" , "extrafont", "extrafontdb" , "maps" , "maptools" ,"markdown", "plyr" ,"RColorBrewer","RCurl","rgdal","RgoogleMaps"                  "rjson", "RJSONIO"))#
+)
+install.packages(c("streamR", "slidify", "scrapeR" , "ROAuth",  "roxygen2" , "extrafont", "extrafontdb" , "maps" , "maptools" ,"markdown", "plyr" ,"RColorBrewer","RCurl","rgdal","RgoogleMaps",rjson", "RJSONIO"))#
+)
+install.packages(c("streamR", "slidify", "scrapeR" , "ROAuth",  "roxygen2" , "extrafont", "extrafontdb" , "maps" , "maptools" ,"markdown", "plyr" ,"RColorBrewer","RCurl","rgdal","RgoogleMaps",rjson", "RJSONIO"))
+install.packages(c("streamR", "slidify", "scrapeR" , "ROAuth",  "roxygen2" , "extrafont", "extrafontdb" , "maps" , "maptools" ,"markdown", "plyr" ,"RColorBrewer","RCurl","rgdal","RgoogleMaps","rjson", "RJSONIO"))
+require(devtools)#
+install_github('rCharts', 'ramnathv')
+library(rCharts)
+names(iris) = gsub("\\.", "", names(iris))#
+rPlot(SepalLength ~ SepalWidth | Species, data = iris, color = 'Species', type = 'point')
+library("twitteR")#
+#
+###  -------------------------------------------------------------------------------------------------------------  ####
+###      SETTINGS#
+###  -------------------------------------------------------------------------------------------------------------  ####
+#
+consumerKey <- 'mt9qH6vdPhFpLkxVRaNG1g'#
+consumerSecret <- 'ukGV17Ox8BJgs0GDUVI8buBtXBfaZiiYMYRp31AMr0c'#
+searchWords <- c("#swiss", "#switzerland")#
+savedTweets <- "savedTweets.Rdata"#
+#
+runTweetSearch <- FALSE#
+maxTweet <- 200
+ary("twitteR")#
+#
+###  -------------------------------------------------------------------------------------------------------------  ####
+###      SETTINGS#
+###  -------------------------------------------------------------------------------------------------------------  ####
+#
+consumerKey <- 'mt9qH6vdPhFpLkxVRaNG1g'#
+consumerSecret <- 'ukGV17Ox8BJgs0GDUVI8buBtXBfaZiiYMYRp31AMr0c'#
+searchWords <- c("#swiss", "#switzerland")#
+savedTweets <- "savedTweets.Rdata"#
+#
+runTweetSearch <- FALSE#
+maxTweet <- 200
+library("twitteR")#
+#
+###  -------------------------------------------------------------------------------------------------------------  ####
+###      SETTINGS#
+###  -------------------------------------------------------------------------------------------------------------  ####
+#
+consumerKey <- 'mt9qH6vdPhFpLkxVRaNG1g'#
+consumerSecret <- 'ukGV17Ox8BJgs0GDUVI8buBtXBfaZiiYMYRp31AMr0c'#
+searchWords <- c("#swiss", "#switzerland")#
+savedTweets <- "savedTweets.Rdata"#
+#
+runTweetSearch <- FALSE#
+maxTweet <- 200
+require(devtools)
+install_github('rCharts', 'ramnathv')
+names(iris) = gsub("\\.", "", names(iris))#
+rPlot(SepalLength ~ SepalWidth | Species, data = iris, color = 'Species', type = 'point')#
+#
+## Example 2 Facetted Barplot#
+hair_eye = as.data.frame(HairEyeColor)#
+rPlot(Freq ~ Hair | Eye, color = 'Eye', data = hair_eye, type = 'bar')
+library(rCharts)
+names(iris) = gsub("\\.", "", names(iris))#
+rPlot(SepalLength ~ SepalWidth | Species, data = iris, color = 'Species', type = 'point')#
+#
+## Example 2 Facetted Barplot#
+hair_eye = as.data.frame(HairEyeColor)#
+rPlot(Freq ~ Hair | Eye, color = 'Eye', data = hair_eye, type = 'bar')
+setwd('/Users/dqn/Google Drive/swissinfo/2013_11_07_swissInitiative')
+read.csv("data/quora.csv")
+setwd('/Users/dqn/Google Drive/swissinfo/2013_11_07_swissInitiative')
+quora <- read.csv("data/quora.csv")#
+init <- read.csv("data/init.csv")
+init
+quora
+str(quora)
+setwd('/Users/dqn/Google Drive/swissinfo/2013_11_07_swissInitiative')
+gsub("\\%", "", as.character(quora[,4])
+)
+setwd('/Users/dqn/Google Drive/swissinfo/2013_11_07_swissInitiative')
+as.numeric(gsub("\\%", "", as.character(quora[,4])))
+setwd('/Users/dqn/Google Drive/swissinfo/2013_11_07_swissInitiative')
+Load csv data#
+#
+quora <- read.csv("data/quora.csv")#
+#
+# reformat %#
+quora[,4] <- as.numeric(gsub("\\%", "", as.character(quora[,4])))
+quora
+setwd('/Users/dqn/Google Drive/swissinfo/2013_11_07_swissInitiative')
+Load csv data#
+#
+quora <- read.csv("data/quora.csv")#
+quora <- quora[,1:4]#
+# reformat %#
+quora[,4] <- as.numeric(gsub("\\%", "", as.character(quora[,4])))#
+colnames(quora) <- c("canton", "eligible", "threshold", "quorum")
+quora
+init
+init
+str(init)
+str(quora)
+as.character(init[,1])
+gsub(" ", "", as.character(init[,1]))
+setwd('/Users/dqn/Google Drive/swissinfo/2013_11_07_swissInitiative')
+gsub("( |c\\))", "", as.character(init[,1]))
+setwd('/Users/dqn/Google Drive/swissinfo/2013_11_07_swissInitiative')
+init <- read.csv("data/init.csv")#
+init[,1] <- gsub("( |c\\))", "", as.character(init[,1]))
+init
+str(init)
+setwd('/Users/dqn/Google Drive/swissinfo/2013_11_07_swissInitiative')
+Load csv data#
+#
+quora <- read.csv("data/quora.csv")#
+quora <- quora[,1:4]#
+# reformat %#
+quora[,4] <- as.numeric(gsub("\\%", "", as.character(quora[,4])))#
+colnames(quora) <- c("canton", "eligible", "threshold", "quorum")#
+quora[,1] <- as.character(quora[,1])#
+#
+init <- read.csv("data/init.csv")#
+init[,1] <- gsub("( |c\\))", "", as.character(init[,1]))
+init
+setwd('/Users/dqn/Google Drive/swissinfo/2013_11_07_swissInitiative')
+init <- init[,1:2]
+init
+setwd('/Users/dqn/Google Drive/swissinfo/2013_11_07_swissInitiative')
+Load csv data#
+#
+quora <- read.csv("data/quora.csv")#
+quora <- quora[,1:4]#
+# reformat %#
+quora[,4] <- as.numeric(gsub("\\%", "", as.character(quora[,4])))#
+colnames(quora) <- c("canton", "eligible", "threshold", "quorum")#
+quora[,1] <- as.character(quora[,1])#
+#
+init <- read.csv("data/init.csv")#
+init[,1] <- gsub("( |c\\))", "", as.character(init[,1]))#
+init <- init[,1:2]#
+colnames(init) <- c('canton', 'initiative')
+init
+quora
+match(init$canton, quora$canton)
+match(quora$canton, init$canton, )
+setwd('/Users/dqn/Google Drive/swissinfo/2013_11_07_swissInitiative')
+idx <- match(quora$canton, init$canton)#
+stopifnot(all(idx))
+idx
+setwd('/Users/dqn/Google Drive/swissinfo/2013_11_07_swissInitiative')
+idx <- match(quora$canton, init$canton)#
+stopifnot(all(idx))#
+cbind(quora, init[idx,])
+setwd('/Users/dqn/Google Drive/swissinfo/2013_11_07_swissInitiative')
+idx <- match(quora$canton, init$canton)#
+stopifnot(all(idx))#
+df <- cbind(quora, init[idx,2 ])
+df
+setwd('/Users/dqn/Google Drive/swissinfo/2013_11_07_swissInitiative')
+Load csv data#
+#
+quora <- read.csv("data/quora.csv")#
+quora <- quora[,1:4]#
+# reformat %#
+quora[,4] <- as.numeric(gsub("\\%", "", as.character(quora[,4])))#
+colnames(quora) <- c("canton", "eligible", "threshold", "quorum")#
+quora[,1] <- as.character(quora[,1])#
+#
+init <- read.csv("data/init.csv")#
+init[,1] <- gsub("( |c\\))", "", as.character(init[,1]))#
+init <- init[,1:2]#
+colnames(init) <- c('canton', 'initiative')#
+### merge datasets#
+#
+idx <- match(quora$canton, init$canton)#
+stopifnot(all(idx))#
+df <- cbind(quora, initiative = init[idx,2 ])
+df
+setwd('/Users/dqn/Google Drive/swissinfo/2013_11_07_swissInitiative')
+library(ggplot2)
+ggplot(data = df) + geom_point(aes(quorum, initiative))
+setwd('/Users/dqn/Google Drive/swissinfo/2013_11_07_swissInitiative')
+library(ggplot2)#
+### Load csv data#
+#
+quora <- read.csv("data/quora.csv")#
+quora <- quora[,1:4]#
+# reformat %#
+quora[,4] <- as.numeric(gsub("\\%", "", as.character(quora[,4]))) / 100#
+colnames(quora) <- c("canton", "eligible", "threshold", "quorum")#
+quora[,1] <- as.character(quora[,1])#
+#
+init <- read.csv("data/init.csv")#
+init[,1] <- gsub("( |c\\))", "", as.character(init[,1]))#
+init <- init[,1:2]#
+colnames(init) <- c('canton', 'initiative')#
+### merge datasets#
+#
+idx <- match(quora$canton, init$canton)#
+stopifnot(all(idx))#
+df <- cbind(quora, initiative = init[idx,2 ])#
+####### PLOT#
+ggplot(data = df) + geom_point(aes(quorum, initiative))
+df
+setwd('/Users/dqn/Google Drive/swissinfo/2013_11_07_swissInitiative')
+ggplot(data = df) + geom_point(aes(quorum, initiative, size = eligible))
+df[-1,]
+df
+setwd('/Users/dqn/Google Drive/swissinfo/2013_11_07_swissInitiative')
+ggplot(data = df[-1,]) + geom_point(aes(quorum, initiative, size = eligible))
+require(rCharts)
+setwd('/Users/dqn/Google Drive/swissinfo/2013_11_07_swissInitiative')
+ggplot(data = df[-1,]) + geom_point(aes(quorum, initiative, size = eligible)) + geom_smooth()
+ggplot(data = df[-1,]) + geom_point(aes(quorum, initiative, size = eligible)) + geom_smooth(aes(quorum, initiative))
+cor.test(df$quorum, df$initiative)
+? plotmatrix
+cor.test(df$quorum, df$initiative)
+library(ggplot2)#
+### Load csv data#
+#
+quora <- read.csv("data/quora.csv")#
+quora <- quora[,1:4]#
+# reformat %#
+quora[,4] <- as.numeric(gsub("\\%", "", as.character(quora[,4]))) / 100#
+colnames(quora) <- c("canton", "eligible", "threshold", "quorum")#
+quora[,1] <- as.character(quora[,1])#
+#
+init <- read.csv("data/init.csv")#
+init[,1] <- gsub("( |c\\))", "", as.character(init[,1]))#
+init <- init[,1:2]#
+colnames(init) <- c('canton', 'initiative')#
+### merge datasets#
+#
+idx <- match(quora$canton, init$canton)#
+stopifnot(all(idx))#
+df <- cbind(quora, initiative = init[idx,2 ])#
+####### PLOT#
+ggplot(data = df[-1,]) + geom_point(aes(quorum, initiative, size = eligible)) + geom_smooth(aes(quorum, initiative))#
+#
+cor.test(df$quorum, df$initiative)
+setwd('/Users/dqn/Google Drive/swissinfo/2013_11_07_swissInitiative')
+plotmatrix(df[,2:4], colour="gray20")
+setwd('/Users/dqn/Google Drive/swissinfo/2013_11_07_swissInitiative')
+plotmatrix(df, colour="gray20")
+setwd('/Users/dqn/Google Drive/swissinfo/2013_11_07_swissInitiative')
+plotmatrix(df[,2:5], colour="gray20")
+df
+setwd('/Users/dqn/Google Drive/swissinfo/2013_11_07_swissInitiative')
+library(ggplot2)#
+### Load csv data#
+#
+quora <- read.csv("data/quora.csv")#
+quora <- quora[,1:4]#
+# reformat %#
+quora[,4] <- as.numeric(gsub("\\%", "", as.character(quora[,4]))) / 100#
+colnames(quora) <- c("canton", "eligible", "threshold", "quorum")#
+quora[,1] <- as.character(quora[,1])#
+#
+init <- read.csv("data/init.csv")#
+init[,1] <- gsub("( |c\\))", "", as.character(init[,1]))#
+init <- init[,1:2]#
+colnames(init) <- c('canton', 'initiative')#
+### merge datasets#
+#
+idx <- match(quora$canton, init$canton)#
+stopifnot(all(idx))#
+df <- cbind(quora, initiative = init[idx,2 ])#
+####### PLOT#
+ggplot(data = df[-1,]) + geom_point(aes(quorum, initiative, size = eligible)) + geom_smooth(aes(quorum, initiative))#
+#
+cor.test(df$quorum, df$initiative)
+?geom_point
+setwd('/Users/dqn/Google Drive/swissinfo/2013_11_07_swissInitiative')
+ggplot(data = df[-1,],aes(quorum, initiative)) + geom_point(aes(quorum, initiative, size = eligible)) + geom_smooth() + geom_text(aes(label=Name),hjust=0, vjust=0)
+setwd('/Users/dqn/Google Drive/swissinfo/2013_11_07_swissInitiative')
+ggplot(data = df[-1,],aes(quorum, initiative)) + geom_point(aes(quorum, initiative, size = eligible)) + geom_smooth() + geom_text(aes(label = canton),hjust=0, vjust=0)
+setwd('/Users/dqn/Google Drive/swissinfo/2013_11_07_swissInitiative')
+ggplot(data = df[-1,],aes(initiative, quorum)) + geom_point(aes(initiative,quorum, size = eligible)) + geom_smooth() + geom_text(aes(label = canton),hjust=0, vjust=0)
+df
+is.na(df$quorum)
+!is.na(df$quorum)
+setwd('/Users/dqn/Google Drive/swissinfo/2013_11_07_swissInitiative')
+ggplot(data = df[-c(1,which(is.na(df$quorum)),],aes(quorum, initiative)) + geom_point(aes(quorum, initiative, size = eligible)) + geom_smooth() + geom_text(aes(label = canton),hjust=0, vjust=0)
+setwd('/Users/dqn/Google Drive/swissinfo/2013_11_07_swissInitiative')
+ggplot(data = df[-c(1,which(is.na(df$quorum))),],aes(quorum, initiative)) + geom_point(aes(quorum, initiative, size = eligible)) + geom_smooth() + geom_text(aes(label = canton),hjust=0, vjust=0)
+c(1,which(is.na(df$quorum))
+)
+setwd('/Users/dqn/Google Drive/swissinfo/2013_11_07_swissInitiative')
+idNA <- c(1,which(is.na(df$quorum)))
+setwd('/Users/dqn/Google Drive/swissinfo/2013_11_07_swissInitiative')
+idNA <- c(1,which(is.na(df$quorum)))#
+#
+ggplot(data = df[-idNA,],aes(quorum, initiative)) + geom_point(aes(quorum, initiative, size = eligible)) + geom_smooth() + geom_text(aes(label = canton),hjust=0, vjust=0)
+setwd('/Users/dqn/Google Drive/swissinfo/2013_11_07_swissInitiative')
+plotmatrix(df[-idNA,2:5], colour="gray20")
+pairs(df)
+pairs(df[,2:5])
+setwd('/Users/dqn/Google Drive/swissinfo/2013_11_07_swissInitiative')
+plotmatrix(df[-idNA,2:5], colour="gray20")
+setwd('/Users/dqn/Google Drive/swissinfo/2013_11_07_swissInitiative')
+scale(df[-idNA,2:5])
+setwd('/Users/dqn/Google Drive/swissinfo/2013_11_07_swissInitiative')
+df.s<- scale(df[-idNA,2:5])#
+plotmatrix(df.s, colour="gray20")
+df.s
+str(df.s)
+setwd('/Users/dqn/Google Drive/swissinfo/2013_11_07_swissInitiative')
+lapply(df[-idNA,2:5], scale)
+setwd('/Users/dqn/Google Drive/swissinfo/2013_11_07_swissInitiative')
+do.call(cbind, lapply(df[-idNA,2:5], scale))
+setwd('/Users/dqn/Google Drive/swissinfo/2013_11_07_swissInitiative')
+sapply(df[-idNA,2:5], scale)
+setwd('/Users/dqn/Google Drive/swissinfo/2013_11_07_swissInitiative')
+df.s<- sapply(df[-idNA,2:5], scale)#
+#
+plotmatrix(df.s, colour="gray20")
+df.s
+str(df.s)
+as.data.frame(df.s)
+setwd('/Users/dqn/Google Drive/swissinfo/2013_11_07_swissInitiative')
+df.s<- sapply(df[-idNA,2:5], scale)#
+plotmatrix(as.data.frame(df.s), colour="gray20")
+setwd('/Users/dqn/Google Drive/swissinfo/2013_11_07_swissInitiative')
+library(ggplot2)#
+### Load csv data#
+#
+quora <- read.csv("data/quora.csv")#
+quora <- quora[,1:4]#
+# reformat %#
+quora[,4] <- as.numeric(gsub("\\%", "", as.character(quora[,4]))) / 100#
+colnames(quora) <- c("canton", "eligible", "threshold", "quorum")#
+quora[,1] <- as.character(quora[,1])#
+#
+init <- read.csv("data/init.csv")#
+init[,1] <- gsub("( |c\\))", "", as.character(init[,1]))#
+init <- init[,1:2]#
+colnames(init) <- c('canton', 'initiative')#
+### merge datasets#
+#
+idx <- match(quora$canton, init$canton)#
+stopifnot(all(idx))#
+df <- cbind(quora, initiative = init[idx,2 ])#
+####### PLOT#
+idNA <- c(1,which(is.na(df$quorum)))#
+#
+ggplot(data = df[-idNA,],aes(quorum, initiative)) + geom_point(aes(quorum, initiative, size = eligible)) + geom_smooth() + geom_text(aes(label = canton),hjust=0, vjust=0)#
+# ggplot(data = df[-idNA,],aes(initiative, quorum)) + geom_point(aes(initiative,quorum, size = eligible)) + geom_smooth() + geom_text(aes(label = canton),hjust=0, vjust=0)#
+cor.test(df$quorum, df$initiative)#
+#
+df.s<- sapply(df[-idNA,2:5], scale)#
+plotmatrix(as.data.frame(df.s), colour="gray20")
+setwd('/Users/dqn/Google Drive/swissinfo/2013_11_07_swissInitiative')
+cor.test([-idNA,2:5])
+setwd('/Users/dqn/Google Drive/swissinfo/2013_11_07_swissInitiative')
+cor.test(df[-idNA,2:5])
+[-idNA,2:5]
+f[-idNA,2:5]
+df[-idNA,2:5]
+ncol(df[-idNA,2:5])
+ncol(df[-idNA,2:5])-1
+setwd('/Users/dqn/Google Drive/swissinfo/2013_11_07_swissInitiative')
+cor.test(df$threshold, df$eligible)
+setwd('/Users/dqn/Google Drive/swissinfo/2013_11_07_swissInitiative')
+ggplot(data = df[-idNA,],aes(threshold, eligible)) + geom_point(aes(threshold, eligible, size = quorum)) + geom_smooth() + geom_text(aes(label = canton),hjust=0, vjust=0)
+setwd('/Users/dqn/Google Drive/swissinfo/2013_11_07_swissInitiative')
+ggplot(data = df[-idNA,],aes(eligible, threshold)) + geom_point(aes(eligible, threshold, size = quorum)) + geom_smooth() + geom_text(aes(label = canton),hjust=0, vjust=0)
+setwd('/Users/dqn/Google Drive/swissinfo/2013_11_07_swissInitiative')
+ggplot(data = df[-idNA,],aes(eligible, threshold)) + geom_point(aes(eligible, threshold, size = quorum)) + geom_smooth() + geom_text(aes(label = canton),method = "lm",hjust=0, vjust=0)
+setwd('/Users/dqn/Google Drive/swissinfo/2013_11_07_swissInitiative')
+ggplot(data = df[-idNA,],aes(eligible, threshold)) + geom_point(aes(eligible, threshold, size = quorum)) + geom_smooth(method = "lm") + geom_text(aes(label = canton)method = "lm",hjust=0, vjust=0)
+setwd('/Users/dqn/Google Drive/swissinfo/2013_11_07_swissInitiative')
+ggplot(data = df[-idNA,],aes(eligible, threshold)) + geom_point(aes(eligible, threshold, size = quorum)) + geom_smooth(method = "lm") + geom_text(aes(label = canton),hjust=0, vjust=0)
+setwd('/Users/dqn/Google Drive/swissinfo/2013_11_07_swissInitiative')
+ggplot(data = df[-idNA,],aes(eligible, threshold)) + geom_point(aes(eligible, threshold, size = initiative)) + geom_smooth(method = "lm") + geom_text(aes(label = canton),hjust=0, vjust=0)
+setwd('/Users/dqn/Google Drive/swissinfo/2013_11_07_swissInitiative')
+ggplot(data = df[-idNA,],aes(eligible, threshold)) + geom_point(aes(eligible, threshold, size = initiative)) + geom_smooth(method = "lm") + geom_text(aes(label = canton, size = 4),hjust=0, vjust=0)
+setwd('/Users/dqn/Google Drive/swissinfo/2013_11_07_swissInitiative')
+ggplot(data = df[-idNA,],aes(eligible, threshold)) + geom_point(aes(eligible, threshold, size = initiative)) + geom_smooth(method = "lm") + geom_text(aes(label = canton, size = 8),hjust=0, vjust=0)
+setwd('/Users/dqn/Google Drive/swissinfo/2013_11_07_swissInitiative')
+ggplot(data = df[-idNA,],aes(eligible, threshold)) + geom_point(aes(eligible, threshold, size = initiative)) + geom_smooth(method = "lm") + geom_text(aes(label = canton, size = 12),hjust=0, vjust=0)
+setwd('/Users/dqn/Google Drive/swissinfo/2013_11_07_swissInitiative')
+ggplot(data = df[-idNA,],aes(eligible, threshold)) + geom_point(aes(eligible, threshold, size = initiative)) + geom_smooth(method = "lm") + geom_text(aes(label = canton, size = 28),hjust=0, vjust=0)
+setwd('/Users/dqn/Google Drive/swissinfo/2013_11_07_swissInitiative')
+ggplot(data = df[-idNA,],aes(eligible, threshold)) + geom_point(aes(eligible, threshold, size = initiative, alpha = 0.8)) + geom_smooth(method = "lm") + geom_text(aes(label = canton, size = 28),hjust=0, vjust=0)
+setwd('/Users/dqn/Google Drive/swissinfo/2013_11_07_swissInitiative')
+df.s<- sapply(df[-idNA,2:5], scale)#
+plotmatrix(as.data.frame(df.s), colour="gray20")
+setwd('/Users/dqn/Google Drive/swissinfo/2013_11_07_swissInitiative')
+ggplot(data = df[-idNA,],aes(quorum, initiative)) + geom_point(aes(quorum, initiative, size = eligible)) + geom_smooth() + geom_text(aes(label = canton),hjust=0, vjust=0)
+setwd('/Users/dqn/Google Drive/swissinfo/2013_11_07_swissInitiative')
+ggplot(data = df[-idNA,],aes(eligible, threshold)) + geom_point(aes(eligible, threshold, size = initiative, alpha = 0.8)) + geom_smooth(method = "lm") + geom_text(aes(label = canton, size = 28),hjust=0, vjust=0)
+setwd('/Users/dqn/Google Drive/swissinfo/2013_11_07_swissInitiative')
+library(lattice)
+parallel(df)
+?parallel
+setwd('/Users/dqn/Google Drive/swissinfo/2013_11_07_swissInitiative')
+parallel(df, horizontal.axis = FALSE)
+parallel(df, horizontal.axis = FALSE)
+rownames(df)
+setwd('/Users/dqn/Google Drive/swissinfo/2013_11_07_swissInitiative')
+parallel(df[-idNA,2:5], horizontal.axis = FALSE)
+setwd('/Users/dqn/Google Drive/swissinfo/2013_11_07_swissInitiative')
+parallelplot(df[-idNA,2:5], horizontal.axis = FALSE)
+setwd('/Users/dqn/Google Drive/swissinfo/2013_11_07_swissInitiative')
+ggplot(data = df[-idNA,],aes(quorum, initiative)) + geom_point(aes(quorum, initiative, size = eligible)) + geom_smooth() + geom_text(aes(label = canton),hjust=0, vjust=0)
+setwd('/Users/dqn/Google Drive/swissinfo/2013_11_07_swissInitiative')
+ggplot(data = df[-idNA,],aes(quorum, initiative)) + geom_point(aes(quorum, initiative, size = eligible)) + geom_smooth(method = "lm") + geom_text(aes(label = canton),hjust=0, vjust=0)
+setwd('/Users/dqn/Google Drive/swissinfo/2013_11_07_swissInitiative')
+ggplot(data = df[-idNA,],aes(eligible, threshold)) + geom_point(aes(eligible, threshold, size = initiative, alpha = 0.8)) + geom_smooth(method = "lm") + geom_text(aes(label = canton, size = 28),hjust=0, vjust=0)
+ggplot(data = df[-idNA,],aes(quorum, initiative)) + geom_point(aes(quorum, initiative, size = eligible)) + geom_smooth(method = "lm") + geom_text(aes(label = canton),hjust=0, vjust=0)
+ggplot(data = df[-idNA,],aes(eligible, threshold)) + geom_point(aes(eligible, threshold, size = initiative, alpha = 0.8)) + geom_smooth(method = "lm") + geom_text(aes(label = canton, size = 28),hjust=0, vjust=0)
+ggplot(data = df[-idNA,],aes(quorum, initiative)) + geom_point(aes(quorum, initiative, size = eligible)) + geom_smooth(method = "lm") + geom_text(aes(label = canton),hjust=0, vjust=0)
+setwd('/Users/dqn/Google Drive/swissinfo/2013_11_07_swissInitiative')
+library(lattice)#
+parallelplot(df[-idNA,2:5], horizontal.axis = FALSE)
+setwd('/Users/dqn/Google Drive/swissinfo/2013_11_07_swissInitiative')
+No significant correlation between quorum and n° of initiative#
+ggplot(data = df[-idNA,],aes(quorum, initiative)) + geom_point(aes(quorum, initiative, size = eligible)) + geom_smooth(method = "lm") + geom_text(aes(label = canton),hjust=0, vjust=0)
+setwd('/Users/dqn/Google Drive/swissinfo/2013_11_07_swissInitiative')
+slopegraph#
+library(lattice)#
+parallelplot(df[-idNA,2:5], horizontal.axis = FALSE)
+setwd('/Users/dqn/Google Drive/swissinfo/2013_11_07_swissInitiative')
+library(lattice)#
+parallelplot(df[-idNA,4:5], horizontal.axis = FALSE)
+super.sym <- trellis.par.get("superpose.symbol")#
+splom(~iris[1:4], groups = Species, data = iris,#
+      panel = panel.superpose,#
+      key = list(title = "Three Varieties of Iris",#
+                 columns = 3, #
+                 points = list(pch = super.sym$pch[1:3],#
+                 col = super.sym$col[1:3]),#
+                 text = list(c("Setosa", "Versicolor", "Virginica"))))#
+splom(~iris[1:3]|Species, data = iris, #
+      layout=c(2,2), pscales = 0,#
+      varnames = c("Sepal\nLength", "Sepal\nWidth", "Petal\nLength"),#
+      page = function(...) {#
+          ltext(x = seq(.6, .8, length.out = 4), #
+                y = seq(.9, .6, length.out = 4), #
+                labels = c("Three", "Varieties", "of", "Iris"),#
+                cex = 2)#
+      })#
+parallelplot(~iris[1:4] | Species, iris) #
+parallelplot(~iris[1:4], iris, groups = Species,#
+             horizontal.axis = FALSE, scales = list(x = list(rot = 90)))
