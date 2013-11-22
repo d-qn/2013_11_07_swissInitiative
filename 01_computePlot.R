@@ -1,4 +1,6 @@
-library(ggplot2)
+library(scales)
+library(extrafont)
+suppressWarnings(loadfonts())
 
 ############################################################################################
 ###    Get a data.frame data
@@ -10,7 +12,7 @@ library(ggplot2)
 quora <- read.csv("data/quora.csv")
 quora <- quora[,1:4]
 # reformat %
-quora[,4] <- as.numeric(gsub("\\%", "", as.character(quora[,4]))) / 100
+quora[,4] <- as.numeric(gsub("\\%", "", as.character(quora[,4])))
 colnames(quora) <- c("canton", "eligible", "threshold", "quorum")
 quora[,1] <- as.character(quora[,1])
 
@@ -26,40 +28,16 @@ idx <- match(quora$canton, init$canton)
 stopifnot(all(idx))
 df <- cbind(quora, initiative = init[idx,2 ])
 
-
-############################################################################################
-###    EXPLORATORY ANALYSES
-############################################################################################
-
 # ignore NA and swiss average
 idNA <- c(1,which(is.na(df$quorum)))
 
-############ NOTES
-# initiative count has not the same start time !!!!
-# the number of days to get the signature not considered !!
-
-#### No significant correlation between quorum and n° of initiative
-ggplot(data = df[-idNA,],aes(quorum, initiative)) + geom_point(aes(quorum, initiative, size = eligible)) + geom_smooth(method = "lm") + geom_text(aes(label = canton),hjust=0, vjust=0)
-
-#### Strong correlation between eligible and threshold
-ggplot(data = df[-idNA,],aes(eligible, threshold)) + geom_point(aes(eligible, threshold, size = initiative, alpha = 0.8)) + geom_smooth(method = "lm") + geom_text(aes(label = canton, size = 28),hjust=0, vjust=0)
-
-
-cor.test(df$quorum, df$initiative)
-cor.test(df$threshold, df$eligible)
-
-# normalize all values
-df.s<- sapply(df[-idNA,2:5], scale)
-plotmatrix(as.data.frame(df.s), colour="gray20")
-
-# slopegraph
-library(lattice)
-parallelplot(df[-idNA,4:5], horizontal.axis = FALSE)
+## round quorum value to 1 digit
+df$quorum <- round(df$quorum, 1)
 
 ############################################################################################
 ###    slopegraph https://gist.github.com/leeper/7158678
 ############################################################################################
-library(scales)
+
 
 slopegraph <- function(
 	df,
@@ -79,7 +57,7 @@ slopegraph <- function(
 	col.lab = par('fg'),
 	col.num = par('fg'),
 	col.xaxt = par('fg'),
-	offset.x = .1, # THIS DOESN'T SEEM TO WORK
+	offset.x = .1,
 	offset.lab = .1,
 	cex.lab = 1,
 	cex.num = 1,
@@ -105,7 +83,7 @@ slopegraph <- function(
     if(!is.null(add.exp))
         eval(add.exp)
     # x-axis
-    axis(1, 1:ncol(df), labels=labels, col=col.xaxt, col.ticks=col.xaxt)
+    axis(1, 1:ncol(df), labels = labels, col=col.xaxt, col.ticks=col.xaxt)
 
 	if(rescaleByColumn) {
     	range.bycol <- sapply(df, function(c) diff(range(c, na.rm = T)))
@@ -114,16 +92,17 @@ slopegraph <- function(
 	} else {
 		df.rescale <- df
 	}
-
+	rownames(df.rescale) <- rownames(df)
     # left-side labels
-    l <- df[,1] # I MAY WANT TO BIN THESE SO THAT CLOSE VALUES DON'T OVERLAP
-    leftlabs <- lapply(split(rownames(df),l), paste, collapse=', ')
-    text(1-offset.lab, if(rescaleByColumn) rescale(as.numeric(names(leftlabs)), rescale) else as.numeric(names(leftlabs)),
-         col=col.lab, leftlabs, pos=labpos.left, cex=cex.lab, font=font.lab)
+    l <- df.rescale[,1] # I MAY WANT TO BIN THESE SO THAT CLOSE VALUES DON'T OVERLAP
+    leftlabs <- lapply(split(rownames(df.rescale),l), paste, collapse=', ')
+#browser()
+    text(1-offset.lab,  as.numeric(names(leftlabs)),
+         col = col.lab, leftlabs, pos = labpos.left, cex=cex.lab, font=font.lab)
     # right-side labels
-    r <- df[,ncol(df)] # I MAY WANT TO BIN THESE SO THAT CLOSE VALUES DON'T OVERLAP
-    rightlabs <- lapply(split(rownames(df),r), paste, collapse=',')
-    text(ncol(df)+offset.lab, if(rescaleByColumn) rescale(as.numeric(names(rightlabs)), rescale) else as.numeric(names(rightlabs)),
+    r <- df.rescale[,ncol(df)] # I MAY WANT TO BIN THESE SO THAT CLOSE VALUES DON'T OVERLAP
+    rightlabs <- lapply(split(rownames(df.rescale),r), paste, collapse=',')
+    text(ncol(df)+offset.lab, as.numeric(names(rightlabs)),
          col=col.lab, rightlabs, pos=labpos.right, cex=cex.lab, font=font.lab)
     # numeric value labels
     # deal with duplicate value labels (i.e., not double printing anything)
@@ -133,9 +112,7 @@ slopegraph <- function(
   		  text(1:ncol(df), as.numeric(y[1:ncol(df)]), y[(ncol(df)+1):(2*ncol(df))],
               col=col.num, cex=cex.num, font=font.num)
     )
-
     # draw lines
-    offset.x <- .1 # small offset for `segments`
     col.lines <- rep(col.lines, length.out=nrow(df))
     lty <- rep(lty, length.out=nrow(df))
     lwd <- rep(lwd, length.out=nrow(df))
@@ -155,18 +132,17 @@ slopegraph <- function(
                df.rescale[i,][-1] # y2-positions
                )
     }
-
-    # return invisibly
-    invisible(NULL)
 }
 
 
 # EXAMPLE
 
-## Tufte's original graph (to the correct scale)
+# exclude NA and swiss values
 dff <- df
 rownames(dff) <- dff[,1]
 dff <- dff [,-1]
 dff <- dff[-idNA,3:4]
-slopegraph(dff, col.line='gray', xlim = c(-.55,3), labels = colnames(dff), cex.lab = 0.5)
 
+pdf("slope_qrVsinit.pdf", width = 10, height = 7)
+slopegraph(dff, col.line='gray', xlim = c(-0.3, 2.5), labels = colnames(dff), cex.lab = 0.6, cex.num = 0.6, offset.x = 0.027)
+dev.off()
